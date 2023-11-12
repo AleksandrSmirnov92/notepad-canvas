@@ -9,11 +9,12 @@ export function handlerLengthLine(ctx: any, text: string) {
       let b = ctx.measureText(newStr.slice(start, i)).width;
       if (b > maxWidth) {
         dividedStr.push(newStr.slice(start, i));
+
         start = i;
         end = i;
       }
     }
-    let str = newStr.slice(end, newStr.length - 1);
+    let str = newStr.slice(end, newStr.length);
     dividedStr.push(str);
     newStr = str;
   }
